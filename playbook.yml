@@ -1,0 +1,17 @@
+---
+- name: Example deployment playbook
+  hosts: all
+  become: yes
+
+  pre_tasks:
+    - name: runing pre task 
+      debug: 
+        msg: "Deployment started at {{ lookup('pipe','date') }}"
+
+  roles:
+    - yum-update-role
+
+  post_tasks:
+    - name: runing post task 
+      debug: 
+        msg: "Deployment completed at {{ lookup('pipe','date') }}" 

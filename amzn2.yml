@@ -1,0 +1,53 @@
+---
+# Packer builder type you want to use to build the AMI.
+type: "amazon-ebs"
+
+# The description to set for the resulting AMI(s)
+ami_description: "Amazon Linux 2 AMI x86_64 HVM gp2 using Packer"
+
+# Name prefix set for the resulting AMI(s)
+ami_name_prefix: "custom-amzn2-ami"
+
+# The name of the region in which to launch the EC2 instance to create the AMI.
+region: "us-east-1"
+
+# The source AMI whose root volume will be copied 
+# and provisioned on the currently running instance.
+# amzn2-ami-hvm-2.0.20210126.0-x86_64-gp2
+source_ami: "ami-047a51fa27710816e"
+
+# The type of virtualization for the AMI you are building
+ami_virtualization_type: "hvm"
+
+# The EC2 instance type to use while building the AMI.
+instance_type: "t2.micro"
+
+# VPC and Subnet ID
+vpc_id: "vpc-6bb21f16"
+subnet_id: "subnet-a6c56197"
+
+# The ID (not the name) of the security group to assign to the instance.
+security_group_id: "sg-078b43fefc4912309"
+
+# The username to connect to SSH with.
+ssh_username: "ec2-user"
+
+# The key that will be used for SSH with the machine
+ssh_keypair_name: "aws-ami-builder-key-pair"
+
+# Path to a PEM encoded private key file to use to authenticate with SSH.
+ssh_private_key_file: "~/aws-key/aws-ami-builder-key-pair.pem"
+
+# Force Packer to first deregister an existing AMI if one 
+# with the same name already exists. 
+force_deregister: "true"
+
+# Automatically terminate instances on shutdown in case 
+# Packer exits ungracefully.
+shutdown_behavior: "terminate"
+
+# Ansible command path
+cmd_ansible: "/usr/local/bin/ansible-playbook"
+
+# Name of the playbook you want packer to run. 
+playbook_name: "./playbook.yml"

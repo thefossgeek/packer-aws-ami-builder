@@ -1,0 +1,4 @@
+---
+# defaults file for yum-update-role
+
+yum_reboot_if_needed : True

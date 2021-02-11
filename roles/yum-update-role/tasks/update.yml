@@ -1,0 +1,36 @@
+---
+- name: update yum
+  yum:
+    name: "*"
+    state: latest
+  register: yum_updated
+
+- name: Reboot now
+  shell: sleep 2 && shutdown -r now "Ansible updates triggered"
+  async: 1
+  poll: 0
+
+- name: Check and set if ansible_ssh_host is set
+  set_fact:
+      yum_ssh_hostname: "{{ ansible_ssh_host }}"
+  when: ansible_ssh_host is defined
+
+- name: If no ansible_ssh_host use inventory_hostname
+  set_fact:
+      yum_ssh_hostname: "{{ inventory_hostname }}"
+  when: ansible_ssh_host is not defined
+
+- name: Wait for ssh port to open again
+  wait_for:
+    port: "22"
+    host: "{{ yum_ssh_hostname }}"
+    delay: 30
+    timeout: 180
+    search_regex: OpenSSH
+  connection: local
+  become: False
+
+- name: Pause a little to ensure everything is running
+  pause:
+    seconds: 5
+

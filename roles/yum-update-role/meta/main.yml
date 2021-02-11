@@ -1,0 +1,6 @@
+galaxy_info:
+  author: thefossgeek@gmail.com
+  description: An Ansible role that upgrade all packages and reboot server.
+  license: MIT
+  min_ansible_version: 2.1
+dependencies: []
