@@ -3,11 +3,11 @@ packer-aws-ami-builder
 
 This project uses Python library to programmatically generate JSON Packer template and use python to run hashicorp Packer cli command to creates a new AMI out of the latest Amazon Linux 2 AMI,and customizes the image using scripts and Ansible. You can also integrate with your CI/CD pipeline. The image is built in an automated fashion and all changes are tracked by source control. Infrastructure-as-code at its best!
 
-[packerlicious!](https://github.com/mayn/packerlicious) - a python library to create packer templates.
+[packerlicious](https://github.com/mayn/packerlicious) - a python library to create packer templates.
 
-[packer.py!](https://github.com/mayn/packer.py) - python library for interacting with hashicorp packer CLI executable.
+[packer.py](https://github.com/mayn/packer.py) - python library for interacting with hashicorp packer CLI executable.
 
-You can further customize the script to get secrets from HashiCorp Vault using [hvac!](https://github.com/hvac/hvac) and feed the template to Packer with out storing secrets in Packer JSON template.
+You can further customize the script to get secrets from HashiCorp Vault using [hvac](https://github.com/hvac/hvac) and feed the template to Packer with out storing secrets in Packer JSON template.
 
 High-Level Workflow
 -------------------
