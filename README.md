@@ -9,6 +9,8 @@ This project uses Python library to programmatically generate JSON Packer templa
 
 You can further customize the script to get secrets from HashiCorp Vault using [hvac](https://github.com/hvac/hvac) and feed the template to Packer with out storing secrets in Packer JSON template.
 
+If you want to build CentOS AMI instead of Amazon Linux 2 you can then just change variables in amzn2.yml and run it. 
+
 High-Level Workflow
 -------------------
 
