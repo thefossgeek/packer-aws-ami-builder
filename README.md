@@ -19,7 +19,7 @@ Below diagram illustrates the high-level workflow of golden AMI pipeline.
 Minimum Requirements:
 --------------------
 
-* Ubuntu 20.04 LTS
+* Ubuntu 20.04 LTS (also run other Linux distribution)
 * Python 3
 * Packer 1.x.x
 * Ansible 2.x.x
