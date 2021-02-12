@@ -51,3 +51,6 @@ cmd_ansible: "/usr/local/bin/ansible-playbook"
 
 # Name of the playbook you want packer to run. 
 playbook_name: "./playbook.yml"
+
+# Packer command path
+cmd_packer: "/usr/bin/packer" 

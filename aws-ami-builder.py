@@ -96,11 +96,9 @@ def main():
 		)
 	)
 
-	print(template.to_json())
-
 	PackerExecutable(machine_readable=False)
 
-	p = PackerExecutable(executable_path="/usr/bin/packer")
+	p = PackerExecutable(executable_path=ami_config['cmd_packer'])
 
 	(ret, out, err) = p.build(
 		template.to_json(),
