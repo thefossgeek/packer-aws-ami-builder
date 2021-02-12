@@ -46,3 +46,6 @@ $ export AWS_SECRET_ACCESS_KEY="asecretkey"
 $ ./aws-ami-builder.py --var_file=./amzn2.yml
 
 ```
+LICENSE
+-------
+MIT
